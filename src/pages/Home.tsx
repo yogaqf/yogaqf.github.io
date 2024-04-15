@@ -5,9 +5,7 @@ const Home = () => {
   return (
     <Layout>
       <div>Home</div>
-      <div className="grid grid-cols-3 gap-4">
-        <ModeToggle />
-      </div>
+      <div className="grid grid-cols-3 gap-4"></div>
     </Layout>
   );
 };
