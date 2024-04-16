@@ -74,3 +74,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Light Mode */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: darkgray;
+}
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+}
+
+/* Dark Mode */
+.dark ::-webkit-scrollbar-thumb {
+  background-color: dimgray; /* Adjust the color as needed */
+}

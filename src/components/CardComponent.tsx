@@ -11,20 +11,18 @@ import {
 const CardComponent = () => {
   return (
     <>
-      <Card>
+      <Card className="w-[300px]">
         <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
+          <CardTitle>Melati</CardTitle>
         </CardHeader>
         <CardContent>
           <p>Card Content</p>
+          <CardDescription>Card Description</CardDescription>
         </CardContent>
-        <Button> Button </Button>
         <CardFooter>
-          <p>Card Footer</p>
+          <Button> Button </Button>
         </CardFooter>
       </Card>
-      ;
     </>
   );
 };
