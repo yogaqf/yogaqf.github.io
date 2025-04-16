@@ -28,7 +28,7 @@ const App = () => {
               />
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 tracking-tight">
-              Yoga QF
+              Yoga Qodar Falah
             </h1>
             <div className="h-8 mb-4">
               <TypeWriter
