@@ -26,7 +26,7 @@ const Navbar = () => {
             ))}
           </ul>
           <ThemeSwitch />
-          <button
+          {/* <button
             type="button"
             onClick={() => setIsOpen((o) => !o)}
             className="btn-ghost !no-underline sm:hidden"
@@ -34,7 +34,7 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? "Close" : "Menu"}
-          </button>
+          </button> */}
         </div>
       </nav>
       {isOpen ? (

@@ -55,8 +55,8 @@ const App = () => {
           <em>Qodar Falah</em>
         </h1>
         <p className="hero-bio">
-          Saya membangun produk digital yang terasa nyata — dari konsep hingga
-          kode, dengan perhatian penuh pada detail dan pengalaman pengguna.
+          Seorang Tech enthusiast yang memiliki pengetahuan luas tentang
+          teknologi dan senang mempelajari hal baru.
         </p>
         <div className="hero-bio !mb-8 !mt-[-1rem] max-w-[480px]">
           <TypeWriter
@@ -359,7 +359,7 @@ const App = () => {
         </span>
         <span className="available-dot">
           <span className="dot" />
-          Available for freelance work
+          Available for fulltime work
         </span>
       </div>
     </div>
