@@ -4,39 +4,41 @@ import TypeWriter from "./components/TypeWriter";
 
 const skills = [
   "React",
-  "TypeScript",
+  "Next JS",
   "Node.js",
   "Python",
-  "MongoDB",
-  "Docker",
-  "UI Design",
-  "PostgreSQL",
+  "PHP",
+  "Laravel",
+  "CorelDRAW",
+  "Photoshop",
+  "VHP",
 ];
 
 const projects = [
   {
-    tag: "UI/UX · 2024",
-    title: "Dashboard Analytics",
-    description:
-      "Sistem visualisasi data untuk startup fintech dengan fokus pada kejelasan metrik.",
+    tag: "Landing Page",
+    title: "Jelajah Subang",
+    description: "Landing page untuk rekomendasi wisata Subang.",
+    link: "https://jelajahsubang.vercel.app/",
   },
   {
-    tag: "Web App · 2024",
-    title: "E-Commerce Platform",
+    tag: "Analytics App",
+    title: "App Signal NR7",
     description:
-      "Platform belanja dengan pengalaman checkout yang dioptimalkan end-to-end.",
+      "Aplikasi analitik untuk monitoring sinyal NR7 dengan visualisasi data real-time.",
+    link: "https://app-signal-nr7.streamlit.app/",
   },
   {
-    tag: "Branding · 2023",
-    title: "Visual Identity",
-    description:
-      "Identitas merek untuk perusahaan teknologi pendidikan.",
+    tag: "Design",
+    title: "Brand Identity",
+    description: "Branding lengkap design untuk perusahaan.",
+    link: "https://brand-identity.vercel.app/",
   },
   {
-    tag: "Mobile · 2023",
-    title: "Health Tracker App",
-    description:
-      "Aplikasi kesehatan dengan fokus pada kebiasaan harian dan insight ringkas.",
+    tag: "Web App",
+    title: "Sardjana Tempe",
+    description: "Aplikasi e-commerce untuk jajanan oleh2 online.",
+    link: "https://sardjanatempe.github.io/",
   },
 ];
 
@@ -61,8 +63,8 @@ const App = () => {
             texts={[
               "Full Stack Developer",
               "React Specialist",
-              "TypeScript Enthusiast",
-              "UI/UX Designer",
+              "Graphic Designer",
+              "Trader",
             ]}
             className="text-[16px] font-light text-[color:var(--color-text-secondary)]"
           />
@@ -75,29 +77,39 @@ const App = () => {
             type="button"
             className="btn-ghost"
             onClick={() =>
-              document.getElementById("work")?.scrollIntoView({
-                behavior: "smooth",
-              })
+              window.open(
+                "https://drive.google.com/file/d/1Xo9n8s2l7mLh3j5aZt0v9u8w6yR2e/view?usp=sharing",
+                "_blank",
+              )
             }
           >
-            Lihat karya
+            Download CV
           </button>
         </div>
 
-        <div className="hero-cta !mt-6 gap-6">
-          <a href="#" className="social-link !text-[color:var(--color-text-secondary)]">
+        {/* <div className="hero-cta !mt-6 gap-6">
+          <a
+            href="#"
+            className="social-link !text-[color:var(--color-text-secondary)]"
+          >
             <i className="fab fa-github text-[15px]" aria-hidden />
             GitHub
           </a>
-          <a href="#" className="social-link !text-[color:var(--color-text-secondary)]">
+          <a
+            href="#"
+            className="social-link !text-[color:var(--color-text-secondary)]"
+          >
             <i className="fab fa-linkedin text-[15px]" aria-hidden />
             LinkedIn
           </a>
-          <a href="#" className="social-link !text-[color:var(--color-text-secondary)]">
+          <a
+            href="#"
+            className="social-link !text-[color:var(--color-text-secondary)]"
+          >
             <i className="fab fa-twitter text-[15px]" aria-hidden />
             Twitter
           </a>
-        </div>
+        </div> */}
       </section>
 
       <Section title="Proyek pilihan" id="work" contentClassName="works-grid">
@@ -106,16 +118,27 @@ const App = () => {
             <p className="work-tag">{p.tag}</p>
             <h3 className="work-title">{p.title}</h3>
             <p className="work-desc">{p.description}</p>
+            <a
+              href={p.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost !mt-4"
+            >
+              Lihat Proyek
+            </a>
           </article>
         ))}
       </Section>
 
       <Section title="Tentang" id="about">
         <p className="hero-bio !mb-0 max-w-none">
-          I&apos;m a passionate full-stack developer with 5 years of experience
-          in building web applications. I specialize in React, Node.js, and
-          TypeScript. When I&apos;m not coding, you can find me contributing to
-          open-source projects or writing technical blog posts.
+          I&apos;m a passionate full-stack developer, IT Support, design, and
+          trader with over 5 years of experience building impactful digital
+          products. I specialize in React, Node.js, and modern web technologies,
+          delivering solutions that are not only functional but also delightful
+          to use. When I&apos;m not coding, you can find me exploring design
+          trends or analyzing market patterns. I&apos;m always eager to take on
+          new challenges and collaborate on innovative projects.
         </p>
       </Section>
 
@@ -130,17 +153,18 @@ const App = () => {
       <Section title="Pengalaman" contentClassName="timeline-list">
         {[
           {
-            year: "2020 - Present",
-            title: "Senior Full Stack Developer",
-            company: "Tech Corp Inc.",
+            year: "2018 - 2019",
+            title: "Admin Staff",
+            company: "CV Mitra Surya Nugraha",
             description:
-              "Leading development of enterprise web applications",
+              "Mengelola administrasi dan operasional kantor, serta mendukung tim dalam berbagai tugas administratif",
           },
           {
-            year: "2018 - 2020",
-            title: "Frontend Developer",
-            company: "Digital Solutions Co.",
-            description: "Developed customer-facing web applications",
+            year: "2020 - present",
+            title: "Design, IT Support, Web Developer, Accounting",
+            company: "Lembah Ciater Resort",
+            description:
+              "Bertanggung jawab untuk desain grafis, dukungan IT, dan mengelola alur akuntansi, serta mengembangkan dan memelihara situs web perusahaan untuk meningkatkan pengalaman pelanggan",
           },
         ].map((item) => (
           <div key={item.title} className="timeline-item">
@@ -153,7 +177,7 @@ const App = () => {
         ))}
       </Section>
 
-      <Section title="Blog">
+      {/* <Section title="Blog">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
@@ -188,28 +212,28 @@ const App = () => {
             </article>
           ))}
         </div>
-      </Section>
+      </Section> */}
 
       <Section title="Testimoni">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {[
             {
               quote:
-                "Yoga's work is exceptional. He has a deep understanding of modern web technologies and delivers high-quality solutions.",
-              name: "John Smith",
-              role: "CEO, Tech Corp Inc.",
+                "Yoga's work is exceptional. He has a deep understanding IT industry and consistently delivers outstanding results.",
+              name: "Sukaryanto",
+              role: "ex RM Lembah Ciater Resort",
             },
             {
               quote:
                 "I've worked with Yoga on multiple projects and he consistently exceeds expectations. His attention to detail is outstanding.",
-              name: "Sarah Johnson",
-              role: "CTO, Digital Solutions Co.",
+              name: "Elmar",
+              role: "Founder Jelajah Subang",
             },
             {
               quote:
-                "Yoga is not only a talented developer but also a great team player. He communicates effectively and delivers on time.",
-              name: "Michael Brown",
-              role: "Project Manager, Startup Hub",
+                "Yoga is not only a talented person but also a great team player. He communicates effectively and delivers on time.",
+              name: "Dita Eka Wahyudin",
+              role: "Enterpreneur & Trader",
             },
           ].map((t) => (
             <blockquote key={t.name} className="quote-card">
@@ -225,30 +249,32 @@ const App = () => {
         <div className="flex flex-col gap-3">
           {[
             {
-              title: "Certified React Developer",
-              organization: "React Academy",
-              year: "2023",
-              icon: "https://via.placeholder.com/64x64",
+              title: "Certified Javascript Developer",
+              organization: "Programmer Zaman Now",
+              // icon: "https://via.placeholder.com/64x64",
             },
             {
-              title: "Advanced TypeScript",
-              organization: "TypeScript Institute",
-              year: "2022",
-              icon: "https://via.placeholder.com/64x64",
+              title: "Certified Python Developer",
+              organization: "Sololearn",
+              // icon: "https://via.placeholder.com/64x64",
             },
             {
-              title: "Best Open Source Contribution",
-              organization: "GitHub",
-              year: "2021",
-              icon: "https://via.placeholder.com/64x64",
+              title: "Certified PHP Developer",
+              organization: "Programmer Zaman Now",
+              // icon: "https://via.placeholder.com/64x64",
+            },
+            {
+              title: "Sekolah Pasar Modal",
+              organization: "BEI (Bursa Efek Indonesia)",
+              // icon: "https://via.placeholder.com/64x64",
             },
           ].map((award) => (
             <div key={award.title} className="award-row">
-              <img src={award.icon} alt="" />
+              {/* <img src={award.icon} alt="" /> */}
               <div>
                 <h3 className="work-title !mb-1">{award.title}</h3>
                 <p className="work-desc">{award.organization}</p>
-                <p className="work-tag !mb-0 !mt-1">{award.year}</p>
+                {/* <p className="work-tag !mb-0 !mt-1">{award.year}</p> */}
               </div>
             </div>
           ))}
@@ -263,13 +289,20 @@ const App = () => {
             Punya proyek? <em>Ayo bicara.</em>
           </h2>
           <div className="social-links">
-            <a href="mailto:hello@example.com" className="social-link">
-              ✉ hello@example.com
+            <a href="https://wa.me/6281802090774" className="social-link">
+              <i className="fab fa-whatsapp text-[15px]" aria-hidden /> Kirim
+              pesan WhatsApp
             </a>
-            <a href="#" className="social-link">
+            <a href="mailto:yoga.qf@gmail.com" className="social-link">
+              ✉ yoga.qf@gmail.com
+            </a>
+            {/* <a
+              href="https://www.linkedin.com/in/yogaqf"
+              className="social-link"
+            >
               ↗ LinkedIn
-            </a>
-            <a href="#" className="social-link">
+            </a> */}
+            <a href="https://github.com/yogaqf" className="social-link">
               ↗ GitHub
             </a>
           </div>
@@ -299,7 +332,7 @@ const App = () => {
               id="contact-email"
               type="email"
               className="lp-input"
-              placeholder="you@email.com"
+              placeholder="your@email.com"
               autoComplete="email"
             />
           </div>
@@ -321,10 +354,12 @@ const App = () => {
       </section>
 
       <div className="footer-bar">
-        <span className="footer-copy">© {new Date().getFullYear()} Emil Abdul N</span>
+        <span className="footer-copy">
+          © {new Date().getFullYear()} Yoga Qodar Falah. All rights reserved.
+        </span>
         <span className="available-dot">
           <span className="dot" />
-          Tersedia untuk proyek baru
+          Available for freelance work
         </span>
       </div>
     </div>

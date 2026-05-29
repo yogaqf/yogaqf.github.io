@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <nav className="nav" aria-label="Main">
         <a href="#" className="nav-logo">
-          yoga.dev
+          yoga.qf
         </a>
         <div className="flex items-center gap-4 sm:gap-6">
           <ul className="nav-links hidden sm:flex">
@@ -41,10 +41,7 @@ const Navbar = () => {
         <ul className="nav-links mb-10 flex flex-col gap-3 sm:hidden">
           {navItems.map((item) => (
             <li key={`${item.href}-mobile`}>
-              <a
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-              >
+              <a href={item.href} onClick={() => setIsOpen(false)}>
                 {item.label}
               </a>
             </li>
