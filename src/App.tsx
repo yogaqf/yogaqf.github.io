@@ -78,7 +78,7 @@ const App = () => {
             className="btn-ghost"
             onClick={() =>
               window.open(
-                "https://drive.google.com/file/d/1Xo9n8s2l7mLh3j5aZt0v9u8w6yR2e/view?usp=sharing",
+                "https://drive.google.com/file/d/1uRUyaPPu8Qef3KHmK7zjrTqcoBzLUAV2/view?usp=drive_link",
                 "_blank",
               )
             }
