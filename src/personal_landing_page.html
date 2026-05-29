@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Santoso — Personal Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --color-text-primary: #1a1a1a;
+      --color-text-secondary: #6b6b6b;
+      --color-text-tertiary: #a0a0a0;
+      --color-background-primary: #ffffff;
+      --color-background-secondary: #f7f6f3;
+      --color-border-tertiary: rgba(0,0,0,0.1);
+      --color-border-secondary: rgba(0,0,0,0.2);
+      --border-radius-lg: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-text-primary: #f0efe9;
+        --color-text-secondary: #a8a79f;
+        --color-text-tertiary: #6e6d68;
+        --color-background-primary: #1c1c1a;
+        --color-background-secondary: #242422;
+        --color-border-tertiary: rgba(255,255,255,0.1);
+        --color-border-secondary: rgba(255,255,255,0.2);
+      }
+    }
+
+    body {
+      background: var(--color-background-primary);
+      color: var(--color-text-primary);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .lp-root {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover { color: var(--color-text-primary); }
+
+    .hero { margin-bottom: 5rem; }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--color-text-tertiary);
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(42px, 8vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--color-text-secondary);
+    }
+
+    .hero-bio {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 12px 28px;
+      background: var(--color-text-primary);
+      color: var(--color-background-primary);
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: opacity 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover { opacity: 0.8; }
+
+    .btn-ghost {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--color-text-secondary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--color-text-primary); }
+
+    .divider {
+      border: none;
+      border-top: 0.5px solid var(--color-border-tertiary);
+      margin: 4rem 0;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      margin-bottom: 2rem;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--color-border-tertiary);
+      border: 0.5px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      margin-bottom: 5rem;
+    }
+
+    .work-item {
+      background: var(--color-background-primary);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .work-item:hover { background: var(--color-background-secondary); }
+
+    .work-tag {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--color-text-tertiary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .work-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 19px;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .work-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 5rem;
+    }
+
+    .skill-pill {
+      font-size: 12px;
+      font-weight: 400;
+      padding: 6px 16px;
+      border: 0.5px solid var(--color-border-secondary);
+      border-radius: 100px;
+      color: var(--color-text-secondary);
+    }
+
+    .contact-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .contact-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      max-width: 320px;
+    }
+
+    .contact-heading em {
+      font-style: italic;
+      color: var(--color-text-secondary);
+    }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-end;
+    }
+
+    .social-link {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .social-link:hover { color: var(--color-text-primary); }
+
+    .footer-bar {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 0.5px solid var(--color-border-tertiary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      font-weight: 300;
+    }
+
+    .available-dot {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--color-text-secondary);
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #3B6D11;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    @media (max-width: 480px) {
+      .works-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 1rem; }
+      .contact-block { flex-direction: column; align-items: flex-start; }
+      .social-links { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="lp-root">
+
+    <nav class="nav">
+      <div class="nav-logo">Alex.dev</div>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <p class="hero-eyebrow">Designer & Developer</p>
+      <h1 class="hero-name">
+        Alex<br><em>Santoso</em>
+      </h1>
+      <p class="hero-bio">
+        Saya membangun produk digital yang terasa nyata — dari konsep hingga kode, dengan perhatian penuh pada detail dan pengalaman pengguna.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Hubungi saya</a>
+        <button class="btn-ghost" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">Lihat karya</button>
+      </div>
+    </section>
+
+    <p class="section-label" id="work">Proyek pilihan</p>
+    <div class="works-grid">
+      <div class="work-item">
+        <p class="work-tag">UI/UX · 2024</p>
+        <h3 class="work-title">Dashboard Analytics</h3>
+        <p class="work-desc">Sistem visualisasi data untuk startup fintech di Jakarta.</p>
+      </div>
+      <div class="work-item">
+        <p class="work-tag">Web App · 2024</p>
+        <h3 class="work-title">E-Commerce Platform</h3>
+        <p class="work-desc">Platform belanja dengan pengalaman checkout yang dioptimalkan.</p>
+      </div>
+      <div class="work-item">
+        <p class="work-tag">Branding · 2023</p>
+        <h3 class="work-title">Visual Identity</h3>
+        <p class="work-desc">Identitas merek untuk perusahaan teknologi pendidikan.</p>
+      </div>
+      <div class="work-item">
+        <p class="work-tag">Mobile · 2023</p>
+        <h3 class="work-title">Health Tracker App</h3>
+        <p class="work-desc">Aplikasi kesehatan dengan 10k+ pengguna aktif per bulan.</p>
+      </div>
+    </div>
+
+    <p class="section-label" id="about">Keahlian</p>
+    <div class="skills-row">
+      <span class="skill-pill">UI Design</span>
+      <span class="skill-pill">React</span>
+      <span class="skill-pill">Figma</span>
+      <span class="skill-pill">TypeScript</span>
+      <span class="skill-pill">Node.js</span>
+      <span class="skill-pill">UX Research</span>
+      <span class="skill-pill">Motion Design</span>
+      <span class="skill-pill">Design Systems</span>
+      <span class="skill-pill">Tailwind CSS</span>
+      <span class="skill-pill">PostgreSQL</span>
+    </div>
+
+    <hr class="divider">
+
+    <div class="contact-block" id="contact">
+      <h2 class="contact-heading">Punya proyek? <em>Ayo bicara.</em></h2>
+      <div class="social-links">
+        <a href="mailto:hello@alex.dev" class="social-link">✉ hello@alex.dev</a>
+        <a href="#" class="social-link">↗ LinkedIn</a>
+        <a href="#" class="social-link">↗ GitHub</a>
+        <a href="#" class="social-link">↗ Dribbble</a>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-copy">© 2024 Alex Santoso</span>
+      <span class="available-dot">
+        <span class="dot"></span>
+        Tersedia untuk proyek baru
+      </span>
+    </div>
+
+  </div>
+</body>
+</html>

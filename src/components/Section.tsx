@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface SectionProps {
   id?: string;
@@ -14,16 +15,16 @@ const Section: React.FC<SectionProps> = ({
   title,
   children,
   className = "",
-  titleClassName = "text-2xl font-bold mb-4 dark:text-white",
-  contentClassName = "space-y-4",
+  titleClassName = "section-label",
+  contentClassName = "",
 }) => {
   return (
-    <section id={id} className={`py-8 ${className}`}>
+    <section id={id} className={cn("section-block", className)}>
       {title ? (
-        <div className="container mx-auto px-4 w-full md:w-3/4 lg:w-2/3 xl:w-1/2">
+        <>
           <h2 className={titleClassName}>{title}</h2>
-          <div className={contentClassName}>{children}</div>
-        </div>
+          <div className={cn(contentClassName)}>{children}</div>
+        </>
       ) : (
         children
       )}
